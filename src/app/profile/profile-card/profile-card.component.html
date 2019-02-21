@@ -1,0 +1,14 @@
+<mat-card class="profile-card">
+  <mat-card-title>My Profile</mat-card-title>
+  <mat-card-content>
+    <dl>
+      <dt>First Name</dt>
+      <dd>{{ profile?.firstName }}</dd>
+      <dt>Last Name</dt>
+      <dd>{{ profile?.lastName }}</dd>
+      <dt>Average Hours Per day</dt>
+      <dd>{{ profile?.averageNumberOfHoursPerDay }}</dd>
+    </dl>
+  </mat-card-content>
+  <ng-content select="mat-card-actions"></ng-content>
+</mat-card>

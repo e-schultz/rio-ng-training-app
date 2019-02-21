@@ -1,18 +1,7 @@
 <section class="content-wrapper">
-  <mat-card class="profile-card">
-    <mat-card-title>My Profile</mat-card-title>
-    <mat-card-content>
-      <dl>
-        <dt>First Name</dt>
-        <dd>{{ profile?.firstName }}</dd>
-        <dt>Last Name</dt>
-        <dd>{{ profile?.lastName }}</dd>
-        <dt>Average Hours Per day</dt>
-        <dd>{{ profile?.averageNumberOfHoursPerDay }}</dd>
-      </dl>
-    </mat-card-content>
+  <app-profile-card [profile]="profile">
     <mat-card-actions>
       <button mat-button>EDIT</button>
     </mat-card-actions>
-  </mat-card>
+  </app-profile-card>
 </section>

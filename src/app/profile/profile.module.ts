@@ -5,9 +5,10 @@ import { ProfileRoutingModule } from './profile-routing.module';
 import { ViewProfileComponent } from './view-profile/view-profile.component';
 import { ProfileService } from './profile-service/profile.service';
 import { MatToolbarModule, MatCardModule, MatButton, MatButtonModule } from '@angular/material';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
 
 @NgModule({
-  declarations: [ViewProfileComponent],
+  declarations: [ViewProfileComponent, ProfileCardComponent],
   providers: [ProfileService],
   imports: [
     CommonModule,
