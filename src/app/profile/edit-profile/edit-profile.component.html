@@ -1,0 +1,8 @@
+<section class="content-wrapper">
+  <app-profile-card [profile]="profile" (profileChange)="saveProfile($event)" [isEdit]="true" *ngIf="!!profile">
+    <mat-card-actions>
+      <button mat-button type="submit">SAVE</button>
+      <a mat-button [routerLink]="['../']">CANCEL</a>
+    </mat-card-actions>
+  </app-profile-card>
+</section>

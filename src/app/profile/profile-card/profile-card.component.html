@@ -1,14 +1,29 @@
 <mat-card class="profile-card">
-  <mat-card-title>My Profile</mat-card-title>
-  <mat-card-content>
-    <dl>
-      <dt>First Name</dt>
-      <dd>{{ profile?.firstName }}</dd>
-      <dt>Last Name</dt>
-      <dd>{{ profile?.lastName }}</dd>
-      <dt>Average Hours Per day</dt>
-      <dd>{{ profile?.averageNumberOfHoursPerDay }}</dd>
-    </dl>
-  </mat-card-content>
-  <ng-content select="mat-card-actions"></ng-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <mat-card-title>My Profile</mat-card-title>
+    <mat-card-content *ngIf="!isEdit">
+      <dl>
+        <dt>First Name</dt>
+        <dd>{{ profile?.firstName }}</dd>
+        <dt>Last Name</dt>
+        <dd>{{ profile?.lastName }}</dd>
+        <dt>Average Hours Per day</dt>
+        <dd>{{ profile?.averageNumberOfHoursPerDay }}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-content *ngIf="isEdit">
+      <div class="form-container">
+        <mat-form-field>
+          <input matInput formControlName="firstName" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="lastName" />
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName="averageNumberOfHoursPerDay" />
+        </mat-form-field>
+      </div>
+    </mat-card-content>
+    <ng-content select="mat-card-actions"></ng-content>
+  </form>
 </mat-card>
