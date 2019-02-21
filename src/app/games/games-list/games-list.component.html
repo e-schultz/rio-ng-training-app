@@ -1,3 +1,18 @@
-<p>
-  games-list works!
-</p>
+<!--
+  If there are multipul areas where we want to use the
+  games$ observable, or if we want to easily display a
+  placeholder while fetching data - we can use *ngIf - and
+  assign it to a local template property called games.
+
+  Otherwise, we want to display the ng-template called loading.
+
+  For a more detailed explanation see - https://toddmotto.com/angular-ngif-async-pipe
+-->
+<div *ngIf="games$ | async as games; else loading">
+<ul>
+  <li *ngFor="let game of games">{{ game.name }}</li>
+</ul>
+</div>
+<ng-template #loading>
+  Loading .....
+</ng-template>
