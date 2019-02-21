@@ -25,6 +25,6 @@ export class GamesListComponent implements OnInit {
   ngOnInit() {
     this.games$ = this.http
       .get<Game[]>("http://localhost:3000/games")
-      .pipe<Game[]>(delay(4000));
+      .pipe<Game[]>(delay(1500));
   }
 }

@@ -8,10 +8,10 @@
 
   For a more detailed explanation see - https://toddmotto.com/angular-ngif-async-pipe
 -->
-<div *ngIf="games$ | async as games; else loading">
-<ul>
-  <li *ngFor="let game of games">{{ game.name }}</li>
-</ul>
+<div *ngIf="(games$ | async) as games; else loading">
+  <div style="display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly">
+        <app-game-card *ngFor="let game of games" [game]="game"></app-game-card>
+  </div>
 </div>
 <ng-template #loading>
   Loading .....
