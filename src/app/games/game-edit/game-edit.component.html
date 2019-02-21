@@ -1,0 +1,11 @@
+<section>
+  <div *ngIf="(game$ | async) as game; else loading">
+    <app-game-form [game]="game">
+
+    </app-game-form>
+  </div>
+
+  <ng-template #loading>
+    ....loading
+  </ng-template>
+</section>

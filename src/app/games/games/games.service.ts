@@ -19,6 +19,10 @@ export interface Game {
 export class GamesService {
   constructor(private http: HttpClient) {}
 
+  update(game:Game):Observable<Game> {
+    const { id } = game;
+    return this.http.put<Game>(`http://localhost:3000/games/${id}`,game);
+  }
   list(): Observable<Game[]> {
     return this.http.get<Game[]>(`http://localhost:3000/games/`);
   }

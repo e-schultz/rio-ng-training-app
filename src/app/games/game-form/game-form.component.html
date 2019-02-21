@@ -1,0 +1,35 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <div class="game-form">
+    <!--
+      If you get the error
+      mat-form-field must contain a MatFormFieldControl
+      be sure that you have included MatInputModule in the games.module.ts
+    -->
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Image Url</mat-label>
+      <input matInput formControlName="image" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Platform</mat-label>
+      <input matInput formControlName="platformId" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Priority</mat-label>
+      <input matInput formControlName="priority" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Number of Hours Played</mat-label>
+      <input matInput formControlName="numberOfHoursPlayed" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Number of Hours to Complete</mat-label>
+      <input matInput formControlName="numberOfHoursToComplete" />
+    </mat-form-field>
+    <button mat-button type="submit">Save</button>
+    <a mat-button [routerLink]="['/games']">Cancel</a>
+  </div>
+</form>
