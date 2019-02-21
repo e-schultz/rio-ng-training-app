@@ -1,18 +1,17 @@
 <!--
-  If there are multipul areas where we want to use the
-  games$ observable, or if we want to easily display a
-  placeholder while fetching data - we can use *ngIf - and
-  assign it to a local template property called games.
-
-  Otherwise, we want to display the ng-template called loading.
-
-  For a more detailed explanation see - https://toddmotto.com/angular-ngif-async-pipe
+  since we are resolving the data, we can use the router.snapshot
+  and work with it as if it was sync and not async data
 -->
+<!-- old async -->
+<!--
 <div *ngIf="(games$ | async) as games; else loading">
   <div style="display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly">
         <app-game-card *ngFor="let game of games" [game]="game"></app-game-card>
   </div>
+</div> -->
+
+<div
+  style="display:flex; flex-direction: row; flex-wrap: wrap; justify-content: space-evenly"
+>
+  <app-game-card *ngFor="let game of games" [game]="game"></app-game-card>
 </div>
-<ng-template #loading>
-  Loading .....
-</ng-template>
