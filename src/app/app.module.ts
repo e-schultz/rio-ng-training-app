@@ -14,10 +14,10 @@ import {
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ProfileModule } from './profile/profile.module';
-import { GamesModule } from './games/games.module';
-import { DashboardModule } from './dashboard/dashboard.module';
-
+import { ProfileModule } from "./profile/profile.module";
+import { GamesModule } from "./games/games.module";
+import { DashboardModule } from "./dashboard/dashboard.module";
+import { HttpClientModule } from "@angular/common/http";
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -33,8 +33,9 @@ import { DashboardModule } from './dashboard/dashboard.module';
     MatCardModule,
     ProfileModule,
     GamesModule,
+    HttpClientModule,
     DashboardModule,
-    AppRoutingModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
