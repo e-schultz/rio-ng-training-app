@@ -1,10 +1,12 @@
 <nav class="rio-navbar-header">
   <app-nav-button
-    *ngFor="let navItem of navItems"
+    *ngFor="let navItem of navItems; first as isFirst"
     [label]="navItem.label"
     [link]="navItem.link"
     [ariaLabel]="navItem.ariaLabel"
   ></app-nav-button>
+  <div class="flex-spacer"></div>
+  <app-nav-button [label]="'Evan Schultz'" [link]="['/my-profile']" [ariaLabel]="'Evan Schultz'"></app-nav-button>
   <!--
   <a mat-button routerLink="/" aria-label="Game Progression">
     <span>Game Progression</span>

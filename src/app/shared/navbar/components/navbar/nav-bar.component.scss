@@ -10,12 +10,12 @@ Modified From the material.angular.io website -
 
   > .mat-button {
     &:last-child {
-      margin-left: auto;
+      /* margin-left: auto;*/
     }
   }
 }
 
-.rio-spacer {
+.flex-spacer {
   flex-grow: 1;
 }
 
