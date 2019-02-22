@@ -6,6 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-button.component.scss']
 })
 export class NavButtonComponent implements OnInit {
+  label: string;
+  ariaLabel: string;
+  routerLink: string[];
   constructor() {}
-  ngOnInit() {}
+  ngOnInit() {
+    this.label = 'Game Progression';
+    this.ariaLabel = 'Game Progression';
+    this.routerLink = ['/'];
+  }
 }
