@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-nav-button',
@@ -6,13 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-button.component.scss']
 })
 export class NavButtonComponent implements OnInit {
-  label: string;
-  ariaLabel: string;
-  routerLink: string[];
+  @Input() label: string;
+  @Input() ariaLabel: string;
+  // tslint:disable-next-line: no-input-rename
+  @Input('link') routerLink: string[];
   constructor() {}
-  ngOnInit() {
-    this.label = 'Game Progression';
-    this.ariaLabel = 'Game Progression';
-    this.routerLink = ['/'];
-  }
+  ngOnInit() {}
 }

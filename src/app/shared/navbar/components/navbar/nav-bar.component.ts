@@ -6,6 +6,23 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
+  navItems = [
+    {
+      label: 'Game Progression',
+      ariaLabel: 'Game Progression',
+      link: ['/home']
+    },
+    {
+      label: 'Games',
+      ariaLabel: 'Games',
+      link: ['/games']
+    },
+    {
+      label: 'Dashboard',
+      ariaLabel: 'Dashboard',
+      link: ['/dashboard']
+    }
+  ];
   constructor() {}
 
   ngOnInit() {}
