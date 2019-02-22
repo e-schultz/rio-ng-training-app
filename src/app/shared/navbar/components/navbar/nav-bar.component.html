@@ -1,27 +1,13 @@
 <nav class="rio-navbar-header">
-  <app-nav-button
-    *ngFor="let navItem of navItems; first as isFirst"
-    [label]="navItem.label"
-    [link]="navItem.link"
-    [ariaLabel]="navItem.ariaLabel"
-  ></app-nav-button>
-  <div class="flex-spacer"></div>
-  <app-nav-button [label]="'Evan Schultz'" [link]="['/my-profile']" [ariaLabel]="'Evan Schultz'"></app-nav-button>
-  <!--
-  <a mat-button routerLink="/" aria-label="Game Progression">
-    <span>Game Progression</span>
-  </a>
+  <ng-container *ngFor="let navItem of navItems; first as isFirst">
+    <app-nav-button
+      *ngIf="!navItem.isSpacer"
+      [label]="navItem.label"
+      [link]="navItem.link"
+      [ariaLabel]="navItem.ariaLabel"
+      [ngStyle]="{ 'margin-left.px': isFirst ? 50 : '' }"
+    ></app-nav-button>
 
-  <a mat-button routerLink="/" aria-label="Dashboard">
-    <span>Dashboard</span>
-  </a>
-  <a mat-button routerLink="/" aria-label="Games List">
-    <span>Games</span>
-  </a>
-
-  <div class="flex-spacer"></div>
-
-  <a mat-button routerLink="/" aria-label="Game Progression">
-    <span>Evan Schultz</span>
-  </a>
---></nav>
+    <div *ngIf="navItem.isSpacer" class="flex-spacer"></div>
+  </ng-container>
+</nav>

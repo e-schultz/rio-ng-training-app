@@ -21,6 +21,14 @@ export class NavBarComponent implements OnInit {
       label: 'Dashboard',
       ariaLabel: 'Dashboard',
       link: ['/dashboard']
+    },
+    {
+      isSpacer: true
+    },
+    {
+      label: 'Evan Schultz',
+      ariaLabel: 'Evan Schultz',
+      link: ['/my-profile']
     }
   ];
   constructor() {}
