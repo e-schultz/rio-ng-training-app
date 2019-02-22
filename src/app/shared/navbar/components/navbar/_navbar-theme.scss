@@ -8,7 +8,8 @@
   app-navbar {
     color: mat-color($primary, default-contrast);
 
-    .rio-navbar, .rio-navbar-header {
+    .rio-navbar,
+    .rio-navbar-header {
       background: mat-color($primary);
     }
   }

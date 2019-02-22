@@ -5,15 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavbarModule } from './shared/navbar/navbar.module';
-import { PlaceholderComponent } from './shared/placeholder/placeholder.component';
-
-
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    PlaceholderComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -23,4 +17,4 @@ import { PlaceholderComponent } from './shared/placeholder/placeholder.component
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
