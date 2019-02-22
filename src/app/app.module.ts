@@ -4,16 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NavbarModule } from './shared/navbar/navbar.module';
+import { NavBarModule } from './shared/navbar/nav-bar.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    NavbarModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, NavBarModule],
   providers: [],
   bootstrap: [AppComponent]
 })
