@@ -10,7 +10,7 @@ export class NavBarComponent implements OnInit {
     {
       label: 'Game Progression',
       ariaLabel: 'Game Progression',
-      link: ['/home']
+      link: ['/']
     },
     {
       label: 'Games',
@@ -28,7 +28,7 @@ export class NavBarComponent implements OnInit {
     {
       label: 'Evan Schultz',
       ariaLabel: 'Evan Schultz',
-      link: ['/my-profile']
+      link: ['/profile']
     }
   ];
   constructor() {}
