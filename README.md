@@ -74,3 +74,5 @@ ng generate component shared/navbar/components/navbar --module=navbar --flat=fal
 - UPDATE src/app/shared/navbar/navbar.module.ts
 
 # template basics
+
+# component input and ngfor
