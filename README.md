@@ -25,3 +25,23 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+
+## 00-setup-angular-material-start
+
+Since I am using the angular cli to generate this project, we are able to use the below command to setup Angular Material 
+
+```
+ng add @angular/material
+```
+
+If succesfull, you should see the following in your console:
+
+```
+UPDATE src/main.ts (391 bytes)
+UPDATE src/app/app.module.ts (502 bytes)
+UPDATE angular.json (4149 bytes)
+UPDATE src/index.html (482 bytes)
+UPDATE src/styles.scss (181 bytes)
+```
+
