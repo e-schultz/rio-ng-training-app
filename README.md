@@ -26,13 +26,11 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
 # App Setup
 
 ## 00-setup-angular-material
 
-
-Since I am using the angular cli to generate this project, we are able to use the below command to setup Angular Material 
+Since I am using the angular cli to generate this project, we are able to use the below command to setup Angular Material
 
 ```
 ng add @angular/material
@@ -48,7 +46,7 @@ UPDATE src/index.html (482 bytes)
 UPDATE src/styles.scss (181 bytes)
 ```
 
-## create NavBar module 
+## create NavBar module
 
 We want to create a component to handle our nav bar, using the CLI we can use the command
 
@@ -58,8 +56,8 @@ ng generate module shared/navbar --module=app --flat=false
 
 This will:
 
-* CREATE src/app/shared/navbar/navbar.module.ts 
-* UPDATE src/app/app.module.ts
+- CREATE src/app/shared/navbar/navbar.module.ts
+- UPDATE src/app/app.module.ts
 
 If we had used `--flat=true`, it would have created the `navbar.module.ts` in the shared folder, and not in a sub-folder.
 
@@ -69,8 +67,10 @@ If we had used `--flat=true`, it would have created the `navbar.module.ts` in th
 ng generate component shared/navbar/components/navbar --module=navbar --flat=false
 ```
 
-* CREATE src/app/shared/navbar/components/navbar/navbar.component.scss 
-* CREATE src/app/shared/navbar/components/navbar/navbar.component.html 
-* CREATE src/app/shared/navbar/components/navbar/navbar.component.spec.ts
-* CREATE src/app/shared/navbar/components/navbar/navbar.component.ts
-* UPDATE src/app/shared/navbar/navbar.module.ts
+- CREATE src/app/shared/navbar/components/navbar/navbar.component.scss
+- CREATE src/app/shared/navbar/components/navbar/navbar.component.html
+- CREATE src/app/shared/navbar/components/navbar/navbar.component.spec.ts
+- CREATE src/app/shared/navbar/components/navbar/navbar.component.ts
+- UPDATE src/app/shared/navbar/navbar.module.ts
+
+# template basics
