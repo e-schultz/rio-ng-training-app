@@ -12,6 +12,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { GamesApiService } from './services/games-api/games-api.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,7 @@ import { environment } from '../environments/environment';
     EffectsModule.forRoot([AppEffects]),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
-  providers: [],
+  providers: [GamesApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

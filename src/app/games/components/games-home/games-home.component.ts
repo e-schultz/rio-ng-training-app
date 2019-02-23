@@ -4,6 +4,7 @@ import { Game } from '../../../models/game';
 import { Store, select } from '@ngrx/store';
 import { State } from '../../../reducers';
 import { selectGames, selectCompletedGames } from 'src/app/selectors/game.selectors';
+import { LoadGames } from 'src/app/game.actions';
 
 @Component({
   selector: 'app-games-home',
@@ -11,12 +12,11 @@ import { selectGames, selectCompletedGames } from 'src/app/selectors/game.select
   styleUrls: ['./games-home.component.scss']
 })
 export class GamesHomeComponent implements OnInit {
-  games$: Observable<Game[]>;
-  completedGames$: Observable<Game[]>;
+  games$ = this.store$.pipe(select(selectGames));
+
   constructor(private store$: Store<State>) {}
 
   ngOnInit() {
-    this.games$ = this.store$.pipe(select(selectGames));
-    this.completedGames$ = this.store$.pipe(select(selectCompletedGames));
+    this.store$.dispatch(new LoadGames());
   }
 }
