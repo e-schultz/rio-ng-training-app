@@ -1,0 +1,21 @@
+<section class="content-wrapper">
+  <mat-card class="profile-card" *ngIf="(profile$ | async) as profile; else loading">
+    <mat-card-title>My Profile</mat-card-title>
+    <mat-card-content>
+      <dl>
+        <dt>First Name</dt>
+        <dd>{{ profile.firstName }}</dd>
+        <dt>Last Name</dt>
+        <dd>{{ profile.lastName }}</dd>
+        <dt>Average Hours Per day</dt>
+        <dd>{{ profile.averageNumberOfHoursPerDay }}</dd>
+      </dl>
+    </mat-card-content>
+    <mat-card-actions>
+      <a mat-button [routerLink]="['../edit']">EDIT</a>
+    </mat-card-actions>
+  </mat-card>
+  <ng-template #loading>
+    Loading....
+  </ng-template>
+</section>

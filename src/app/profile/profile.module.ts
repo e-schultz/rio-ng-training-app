@@ -3,12 +3,13 @@ import { CommonModule } from '@angular/common';
 
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileHomeComponent } from './components/profile-home/profile-home.component';
+import { ProfileViewComponent } from './components/profile-view/profile-view.component';
+import { ProfileEditComponent } from './components/profile-edit/profile-edit.component';
+import { MatToolbarModule, MatButtonModule, MatCardModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
-  declarations: [ProfileHomeComponent],
-  imports: [
-    CommonModule,
-    ProfileRoutingModule
-  ]
+  declarations: [ProfileHomeComponent, ProfileViewComponent, ProfileEditComponent],
+  imports: [CommonModule, MatToolbarModule, ProfileRoutingModule, MatButtonModule, MatCardModule]
 })
-export class ProfileModule { }
+export class ProfileModule {}

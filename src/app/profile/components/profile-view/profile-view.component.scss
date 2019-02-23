@@ -1,0 +1,23 @@
+.profile-card {
+  max-width: 600px;
+}
+.content-wrapper {
+  padding: 30px;
+}
+dt {
+  float: left;
+  width: 30%;
+  text-align: right;
+  padding: 0.25em;
+  clear: left;
+}
+dd {
+  float: left;
+  width: 60%;
+  padding: 0.25em 0;
+}
+dl:after {
+  content: '';
+  display: table;
+  clear: both;
+}
