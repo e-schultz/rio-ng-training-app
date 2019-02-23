@@ -42,7 +42,7 @@ const initialGameState = {
       priority: 10,
       numberOfHoursPlayed: 2,
       numberOfHoursToComplete: 56.5,
-      isComplete: false
+      isComplete: true
     }
   ]
 };
