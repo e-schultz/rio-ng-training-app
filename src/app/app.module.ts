@@ -6,10 +6,11 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NavBarModule } from './shared/navbar/nav-bar.module';
 import { HttpClientModule } from '@angular/common/http';
+import { RootStoreModule } from './root-store/root-store.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, NavBarModule, HttpClientModule],
+  imports: [RootStoreModule, BrowserModule, AppRoutingModule, BrowserAnimationsModule, NavBarModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]
 })
