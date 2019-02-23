@@ -1,3 +1,27 @@
-<p>
-  profile-edit works!
-</p>
+<section class="content-wrapper">
+  <mat-card class="profile-card">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+      <mat-card-title>My Profile</mat-card-title>
+      <mat-card-content>
+        <div class="form-container">
+          <mat-form-field>
+            <mat-label>First Name</mat-label>
+            <input matInput formControlName="firstName" type="text" name="__rio_firstName" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Last Name</mat-label>
+            <input matInput formControlName="lastName" type="text" name="__rio_lastName" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Avg Play Per Day</mat-label>
+            <input matInput formControlName="averageNumberOfHoursPerDay" name="__rio_averageNumberOfHoursPerDay" />
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-button type="submit">SAVE</button>
+        <a mat-button [routerLink]="['/profile']">CANCEL</a>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</section>
