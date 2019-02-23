@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile-edit',
@@ -9,7 +10,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileEditComponent implements OnInit {
   form: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient) {
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
     this.form = fb.group({
       id: [],
       image: [],
@@ -26,5 +27,15 @@ export class ProfileEditComponent implements OnInit {
       .subscribe(({ id, firstName, lastName, averageNumberOfHoursPerDay, image, languageId }) => {
         this.form.setValue({ id, firstName, lastName, averageNumberOfHoursPerDay, image, languageId });
       });
+  }
+
+  onSubmit(e) {
+    console.log(e);
+    if (this.form.valid) {
+      console.log('what is the form value?', this.form.value);
+      this.http.put('http://localhost:3000/profile', this.form.value).subscribe(() => {
+        this.router.navigate(['/profile']);
+      });
+    }
   }
 }
