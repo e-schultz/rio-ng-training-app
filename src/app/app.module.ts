@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, Injectable, InjectionToken } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { AppEffects } from './app.effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
-import { GamesApiService } from './services/games-api/games-api.service';
+
+export const BASE_URL = new InjectionToken<string>('base_url', {
+  providedIn: 'root',
+  factory: () => 'http://localhost:3000'
+});
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,9 +28,12 @@ import { GamesApiService } from './services/games-api/games-api.service';
     HttpClientModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([AppEffects]),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreDevtoolsModule.instrument({
+      maxAge: 25,
+      logOnly: environment.production
+    })
   ],
-  providers: [GamesApiService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

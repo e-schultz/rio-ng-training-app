@@ -3,10 +3,7 @@
     <h1>All Games</h1>
     <app-game-list [games]="games"></app-game-list>
   </div>
-  <div *ngIf="(completedGames$ | async) as games; else loading">
-    <h1>Completed Games</h1>
-    <app-game-list [games]="games"></app-game-list>
-  </div>
+
   <ng-template #loading>
     .... Loading
   </ng-template>
