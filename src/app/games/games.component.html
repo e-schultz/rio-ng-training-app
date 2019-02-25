@@ -1,8 +1,14 @@
 <section>
-  <app-games-home></app-games-home>
-
+  <!-- <app-games-home></app-games-home> -->
+  <router-outlet></router-outlet>
+  <a [routerLink]="['./', { outlets: { list: ['list'] } }]">Go</a>
+  <a [routerLink]="[{ outlets: { details: ['edit', 1] } }]">Go</a>
   <section style="border:1px solid black">
-    <h1>hi</h1>
+    <h1>outlet</h1>
+    <router-outlet name="list"></router-outlet>
+  </section>
+  <section style="border:1px solid black">
+    <h1>outlet</h1>
     <router-outlet name="details"></router-outlet>
   </section>
 </section>

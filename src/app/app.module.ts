@@ -22,7 +22,6 @@ export const BASE_URL = new InjectionToken<string>('base_url', {
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
     NavBarModule,
     HttpClientModule,
@@ -31,7 +30,8 @@ export const BASE_URL = new InjectionToken<string>('base_url', {
     StoreDevtoolsModule.instrument({
       maxAge: 25,
       logOnly: environment.production
-    })
+    }),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,7 +1,7 @@
 <section>
   <ul>
     <li *ngFor="let game of games">
-      <a [routerLink]="['../games', { outlets: { details: ['edit', game.id] } }]">{{ game.name }}</a>
+      <a [routerLink]="['/games/home', { outlets: { details: ['edit', game.id] } }]">{{ game.name }}</a>
     </li>
   </ul>
 </section>

@@ -6,14 +6,21 @@ import { GamesComponent } from './games.component';
 
 const routes: Routes = [
   {
-    path: '',
-    pathMatch: 'prefix',
-    component: GamesComponent
-  },
-  {
-    path: 'edit/:id',
-    component: GameEditComponent,
-    outlet: 'details'
+    path: 'home',
+    component: GamesComponent,
+    children: [
+      {
+        path: 'edit/:id',
+        component: GameEditComponent,
+        outlet: 'details'
+      },
+      {
+        path: '',
+        component: GamesHomeComponent,
+        outlet: 'list'
+        //  pathMatch: 'prefix'
+      }
+    ]
   }
 ];
 
