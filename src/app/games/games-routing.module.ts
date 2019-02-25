@@ -23,6 +23,10 @@ const routes: Routes = [
         path: '',
         component: GamesHomeComponent,
         outlet: 'list'
+      },
+      {
+        path: ':id/edit',
+        component: GameEditComponent
       }
     ]
   }

@@ -1,1 +1,35 @@
-<p>game-edit works! {{ id }}</p>
+<section>
+  <form [formGroup]="form" novalidate (ngSubmit)="onSubmit()">
+    <div class="form-container">
+      <mat-form-field>
+        <mat-label>description</mat-label>
+        <input matInput formControlName="description" type="text" />
+      </mat-form-field>
+      <app-game-form [group]="form" groupName="shippingAddress"></app-game-form>
+      <app-game-form [group]="form" groupName="billingAddress"></app-game-form>
+      <ng-container formArrayName="expenses" *ngFor="let expense of expenses.controls; let i = index">
+        <ng-container [formGroupName]="i">
+          <mat-form-field>
+            <mat-label>expense type</mat-label>
+            <input matInput formControlName="expenseType" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>expense total</mat-label>
+            <input matInput formControlName="expenseTotal" type="number" />
+          </mat-form-field>
+        </ng-container>
+      </ng-container>
+      <ng-container formArrayName="addresses" *ngFor="let address of addresses.controls; let i = index">
+        <hr />
+        <app-game-form [group]="address" [groupName]="i"></app-game-form>
+        <hr />
+      </ng-container>
+      {{ expenseTotal$ | async }}
+      <div><button (click)="addItem()">Add</button></div>
+      <div><button (click)="addAddress()">Add Address</button></div>
+      <div><button (click)="prefill()">Prefill</button></div>
+      <div><button (click)="reset()">reset</button></div>
+    </div>
+    {{ form.value | json }}
+  </form>
+</section>
