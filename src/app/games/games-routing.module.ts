@@ -6,11 +6,16 @@ import { GamesComponent } from './games.component';
 
 const routes: Routes = [
   {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  {
     path: 'home',
     component: GamesComponent,
     children: [
       {
-        path: 'edit/:id',
+        path: ':id/edit',
         component: GameEditComponent,
         outlet: 'details'
       },
@@ -18,7 +23,6 @@ const routes: Routes = [
         path: '',
         component: GamesHomeComponent,
         outlet: 'list'
-        //  pathMatch: 'prefix'
       }
     ]
   }

@@ -1,7 +1,7 @@
 <section>
   <!-- <app-games-home></app-games-home> -->
   <router-outlet></router-outlet>
-  <a [routerLink]="['./', { outlets: { list: ['list'] } }]">Go</a>
+  <a [routerLink]="[{ outlets: { list: ['list'] } }]">Go</a>
   <a [routerLink]="[{ outlets: { details: ['edit', 1] } }]">Go</a>
   <section style="border:1px solid black">
     <h1>outlet</h1>
