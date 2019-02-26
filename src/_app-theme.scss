@@ -1,5 +1,5 @@
 @import '../node_modules/@angular/material/theming';
-@import './app/shared/navbar/components/navbar/nav-bar-theme';
+@import './app/shared/navbar/components/navbar/_nav-bar-theme.scss';
 
 @mixin rio-app-theme($theme) {
   $primary: map-get($theme, primary);

@@ -3,8 +3,11 @@ import { Observable } from 'rxjs';
 import { Game } from '../../../models/game';
 import { Store, select } from '@ngrx/store';
 import { State } from '../../../reducers';
-import { selectGames, selectCompletedGames } from 'src/app/selectors/game.selectors';
-import { LoadGames } from 'src/app/game.actions';
+import {
+  selectGames,
+  selectCompletedGames
+} from '../../../selectors/game.selectors';
+import { LoadGames } from '../../../game.actions';
 
 @Component({
   selector: 'app-games-home',
