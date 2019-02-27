@@ -1,8 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  ValidationErrors
+} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 
+function confirmEmail(fg: FormGroup): ValidationErrors {
+  const a = fg.get('email').value;
+  const b = fg.get('confirmEmail').value;
+  return a === b
+    ? null
+    : {
+        confirmEmail: {
+          message: `Expected email and confirmEmail to have same values`,
+          email: a,
+          confirmEmail: b
+        }
+      };
+}
 @Component({
   selector: 'app-profile-edit',
   templateUrl: './profile-edit.component.html',
@@ -10,32 +28,64 @@ import { Router } from '@angular/router';
 })
 export class ProfileEditComponent implements OnInit {
   form: FormGroup;
-  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
-    this.form = fb.group({
-      id: [],
-      image: [],
-      languageId: [],
-      firstName: ['', [Validators.required]],
-      lastName: ['', [Validators.required]],
-      averageNumberOfHoursPerDay: ['', [Validators.required, Validators.min(0), Validators.max(24)]]
-    });
+  constructor(
+    private fb: FormBuilder,
+    private http: HttpClient,
+    private router: Router
+  ) {
+    this.form = fb.group(
+      {
+        id: [],
+        image: [],
+        languageId: [],
+        firstName: ['', [Validators.required]],
+        lastName: ['', [Validators.required]],
+        averageNumberOfHoursPerDay: [
+          '',
+          [Validators.required, Validators.min(0), Validators.max(24)]
+        ],
+        email: [],
+        confirmEmail: []
+      },
+      {
+        validators: [confirmEmail]
+      }
+    );
   }
 
   ngOnInit() {
     this.http
       .get<any>('http://localhost:3000/profile')
-      .subscribe(({ id, firstName, lastName, averageNumberOfHoursPerDay, image, languageId }) => {
-        this.form.setValue({ id, firstName, lastName, averageNumberOfHoursPerDay, image, languageId });
-      });
+      .subscribe(
+        ({
+          id,
+          firstName,
+          lastName,
+          averageNumberOfHoursPerDay,
+          image,
+          languageId
+        }) => {
+          this.form.setValue({
+            id,
+            firstName,
+            lastName,
+            averageNumberOfHoursPerDay,
+            image,
+            languageId
+          });
+        }
+      );
   }
 
   onSubmit(e) {
     console.log(e);
     if (this.form.valid) {
       console.log('what is the form value?', this.form.value);
-      this.http.put('http://localhost:3000/profile', this.form.value).subscribe(() => {
-        this.router.navigate(['/profile']);
-      });
+      this.http
+        .put('http://localhost:3000/profile', this.form.value)
+        .subscribe(() => {
+          this.router.navigate(['/profile']);
+        });
     }
   }
 }
